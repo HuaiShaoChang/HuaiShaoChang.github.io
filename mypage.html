@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+    <script>
+	    jQuery(document).ready(function($) {
+			$('.segment > div').hide();
+
+			$('.menu .item').click(function() {
+				var val = $(this).attr('value');
+				click_menu(val);
+			});
+
+			function click_menu(val) {
+				$('.menu .item.active').removeClass('active');
+				$('.menu .item[value=' + val + ']').addClass('active');
+
+				$('.segment > div').hide();
+				$('.segment > div[value=' + val + ']').show();
+			}
+
+			click_menu(1);
+		});
+    </script>
+</head>
+<body>
+	<div class="ui container">
+		<div class="ui middle aligned grid">
+
+		  <div class="four wide column">
+		  	<div class="ui segment">
+		      <img class="ui image" src="img/pic.jpg">
+		    </div>
+		  </div>
+
+		  <div class="twelve wide column">
+	  		<div class="row">
+	  			<h3 class="ui header">Hi!我是懷少</h1>
+		  		<p>123</p>
+	  		</div>
+		  </div>
+		</div>
+
+		<div class="ui pointing menu">
+
+		  <a class="active item icon" value="1">
+		    <i class="user icon"></i>關於我
+		  </a>
+		  <a class="item icon" value="2">
+		    <i class="configure icon"></i>技能
+		  </a>
+		  <a class="item icon" value="3">
+		    <i class="add user icon"></i>聯絡資料
+		  </a>
+
+		  <div class="right menu">
+		    <div class="item">
+		      <div class="ui transparent icon input">
+		        <input type="text" placeholder="Search...">
+		        <i class="search link icon"></i>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="ui segment">
+			<div value="1">
+				<p>1</p>
+			</div>
+			<div value="2">
+				<p>2</p>
+			</div>
+			<div value="3">
+				<p>3</p>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
